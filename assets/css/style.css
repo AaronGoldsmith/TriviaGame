@@ -49,6 +49,14 @@ h2{
     vertical-align:middle;
     margin:0px 35px;
 }
+#questionHeader{
+    display:inline-block;
+    position: relative;
+}
+h4{
+    position: relative;
+    left: 20px;
+}
 .fas{
     color: #0000faaa !important;
     text-shadow: #492b7a9d 0 0px 20px;
@@ -69,8 +77,11 @@ tbody{
 
 @media only screen and (max-width: 768px){
     tr{width:100%;}
-    .jumbotron{height:100%;}
+    .jumbotron{
+        height:80%;
+        min-width: auto;
+    }
     .container{
-        margin:0px;
+        margin:0px auto;
     }
 }
