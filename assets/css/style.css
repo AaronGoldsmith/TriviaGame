@@ -1,0 +1,63 @@
+html,body
+{
+    height:100%;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: url("txture.png"),url("classy_fabric.png");
+    overflow:hidden;
+    background-position: right bottom, top;
+    background-repeat: repeat-x, repeat;
+}
+.jumbotron{
+    height: 400px;
+    overflow:scroll; /* may need to remove */
+
+}
+#quiz-title{
+    color:#e7e7e7ad;
+    text-align: center;
+    font-size: 4em;
+    text-shadow: #fff 0px 1px 10px;
+    margin-top: 20px;
+}
+.fa-circle{
+    color: rgb(107, 105, 105);
+    font-size: 40px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.far:hover{
+    background: rgba(119, 119, 119,0.324);
+ }
+ tr:hover *{
+    color: #333333;
+ }
+ span .darker{
+     color: #333;
+ }
+ span{
+    font-size: 1.75em;
+    color: rgb(107, 105, 105);
+    display:inline-table;
+    vertical-align:middle;
+    margin:0px 35px;
+}
+.fas{
+    color: #0000faaa !important;
+    text-shadow: #492b7a9d 0 0px 20px;
+}
+
+tr{
+    margin: 20px auto;
+    display:inline-flex;
+    padding: 10px;
+}
+table{
+    height:100%;
+    width:100%;
+}
+tbody{
+    text-align: center
+}
