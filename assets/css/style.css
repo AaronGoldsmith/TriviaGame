@@ -5,22 +5,27 @@ html,body
     margin: 0;
 }
 body{
-    background: url("txture.png"),url("classy_fabric.png");
-    overflow:hidden;
+    background: url("../images/txture.png"),url("../images/classy_fabric.png");
+    /* overflow:hidden; */
     background-position: right bottom, top;
     background-repeat: repeat-x, repeat;
 }
 .jumbotron{
-    height: 400px;
-    overflow:scroll; /* may need to remove */
+    height: 350px;
+    padding: 10px;
+    /* overflow:scroll; may need to remove */
 
 }
+h2{
+    margin: 20px;
+}
+
 #quiz-title{
     color:#e7e7e7ad;
     text-align: center;
     font-size: 4em;
     text-shadow: #fff 0px 1px 10px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .fa-circle{
     color: rgb(107, 105, 105);
@@ -50,7 +55,7 @@ body{
 }
 
 tr{
-    margin: 20px auto;
+    margin: 10px auto;
     display:inline-flex;
     padding: 10px;
 }
@@ -60,4 +65,12 @@ table{
 }
 tbody{
     text-align: center
+}
+
+@media only screen and (max-width: 768px){
+    tr{width:100%;}
+    .jumbotron{height:100%;}
+    .container{
+        margin:0px;
+    }
 }
