@@ -11,7 +11,7 @@ body{
     background-repeat: repeat-x, repeat;
 }
 .jumbotron{
-    height: 350px;
+    height: auto;
     padding: 10px;
     /* overflow:scroll; may need to remove */
 
@@ -43,7 +43,7 @@ h2{
      color: #333;
  }
  span{
-    font-size: 1.75em;
+    font-size: 1.35em;
     color: rgb(107, 105, 105);
     display:inline-table;
     vertical-align:middle;
