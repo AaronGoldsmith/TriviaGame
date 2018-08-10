@@ -74,7 +74,7 @@ function setUpQuestion(){
 
 
 function toggleRadio(button){
-
+    clearInterval(countdown)
     var btn = button.find("i").toggleClass('far fas')
     var txt = button.find("span").toggleClass("text-light text-dark")
 }
@@ -88,12 +88,15 @@ $(document).ready(function(){
          
            var ansChoice = $(this).attr("data-value")
            toggleRadio($(this));
+           $("#options").empty();
+           $("#timeLeft").empty();
            if(ansChoice==Questionlist[INDEX].ans){
-               console.log("match")
+               $("#question").text("THATS RIGHT!")
                correct++;
            }
            else{
                console.log("incorrect")
+               $("#question").text("Sorry, you're wrong!")
                incorrect--;
            }
            setTimeout(nextQuestion,3000);
