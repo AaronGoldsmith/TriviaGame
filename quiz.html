@@ -19,11 +19,11 @@
     <h2 id="quiz-title">Quiz Game</h2>
     <div class="container h-100">
 
-        <div class="jumbotron mt-5">
+        <div id="main" class="jumbotron mt-5">
           <div id="instructions">
             <p>Answer all 10 questions and you win!</p>
             <p>Answering incorrectly won't end the game</p>
-            <p>After answering each question, select the 'next question' indicator </p>
+            <p>If you would like to skip a question, press the right arrow key</p>
           </div>
           <h2 id="startGame">Play</h2>
 
@@ -33,20 +33,20 @@
                   <h4 id ="timeLeft">Seconds left 00:30</h4>
                 </div>
                   <hr>
-                <tbody index=1>
-                  <tr>
+                <tbody index="0">
+                  <tr data-value="1">
                     <td><i class="far fa-circle" aria-hidden="true"></i> </td>
                     <td><span class="pl-4 ml-4 choice"></span></td>
                  </tr>
-                 <tr>
+                 <tr data-value="1">
                    <td><i class="far fa-circle " aria-hidden="true"></i></td>
                    <td><span class="pl-4 ml-4 choice"></span></td>
                 </tr>
-                <tr>
+                <tr data-value="2">
                     <td><i class="far fa-circle " aria-hidden="true"></i></td>
                     <td><span class="pl-4 ml-4 choice"></span></td>
                 </tr>
-                <tr>
+                <tr data-value="3">
                   <td><i class="far fa-circle " aria-hidden="true"></i></td>
                   <td><span class="pl-4 ml-4 choice"></span></td>
                 </tr>

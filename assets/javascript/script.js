@@ -1,7 +1,8 @@
-
+var correct = 0;
+var skips = 0;
+var incorrect = 0;
 var chosen = false;
 var remaining= 30;
-var playing = false;
 var countdown;
 var pause;
 
@@ -30,13 +31,27 @@ var Questionlist = [
 var ans = [];
 var INDEX = 0;
 function nextQuestion(){
-    setUpQuestion();
+    if(INDEX<Questionlist.length-1){
+        setUpQuestion();
 
-    // clear out selected button
-    $(".fas").toggleClass("far fas");
-    remaining = 30;
-    clearInterval(countdown);
-    countdown = setInterval(tick, 1000);
+        // clear out selected button
+        $(".fas").toggleClass("far fas");
+
+        //reset time
+        remaining = 30;
+        clearInterval(countdown);
+        countdown = setInterval(tick, 1000);
+    }
+    else{
+        $("tr").empty();
+        $("#questionHeader").empty();
+        var results = "<p>Skips:"+skips+"</p>";
+        results += "<p>Correct:"+correct+"</p><p>Incorrect: "+incorrect+"</p>";
+        var final = $("div")
+        final.html(results);
+        final.addClass("text-light")
+        $("#main").append(final)
+    }
 }
 
 function setUpQuestion(){
@@ -49,7 +64,7 @@ function setUpQuestion(){
     var tableRows = $("tbody tr")
     var choiceLabels = tableRows.find(".choice");
     choiceLabels.empty();
-    // add choices to choice labels
+    // add choices to choice-labels
     for(choice in choiceLabels){
         var data = choiceLabels[choice];
         var dataLabel = options[choice];
@@ -59,9 +74,9 @@ function setUpQuestion(){
 
 
 function toggleRadio(button){
+
     var btn = button.find("i").toggleClass('far fas')
     var txt = button.find("span").toggleClass("text-light text-dark")
-    chosen = !chosen;
 }
 function isSelected(btn){
    return $(btn).find("i").hasClass("fas");
@@ -70,27 +85,30 @@ function isSelected(btn){
 $(document).ready(function(){
     // RADIO BUTTON click
     $("tr").on("click",function(){
+         
+           var ansChoice = $(this).attr("data-value")
            toggleRadio($(this));
-            pause = setTimeout(nextQuestion,1000);
-
-            // SWITCHING CHOICE OF RADIO BUTTON
-            chosen = !chosen;
+           if(ansChoice==Questionlist[INDEX].ans){
+               console.log("match")
+               correct++;
+           }
+           else{
+               console.log("incorrect")
+               incorrect--;
+           }
+           setTimeout(nextQuestion,3000);
         });
     });
 
 document.onkeyup = function(event){
     var keyVal = event.key;
-    
-    
+
     if(keyVal==="ArrowRight" && INDEX <= 10){    
-        ++INDEX;
         remaining = 30;
         nextQuestion();
+        ++skips;
     }
-    else{
-            console.log("skip with arrow keys")
-        
-    }
+    
 }
 function run() {
     clearInterval(countdown);
@@ -116,6 +134,7 @@ function tick(){
     $("#timeLeft").append(s)
     if(remaining==0){
         clearInterval(countdown)
+        nextQuestion();
     }
     remaining--;
 
