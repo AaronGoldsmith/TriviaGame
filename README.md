@@ -5,6 +5,6 @@ and you automatically lose! <br>
 
 ## Things that need to get finished
 - [x] Add Timer
-- [ ] Add progress report screen
+- [x] Add progress report screen
 - [ ] Display whether user was correct/incorrect following each guess
-- [ ] Finish writing the questions!
+- [x] Finish writing the questions!
