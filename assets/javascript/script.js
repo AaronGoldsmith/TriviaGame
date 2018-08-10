@@ -71,27 +71,25 @@ $(document).ready(function(){
     // RADIO BUTTON click
     $("tr").on("click",function(){
            toggleRadio($(this));
-            // switch question after a 1 second delay
-            // $(".fas").toggleClass("far fas");
-
             pause = setTimeout(nextQuestion,1000);
 
             // SWITCHING CHOICE OF RADIO BUTTON
             chosen = !chosen;
-            // $(this).find("i").toggleClass("far fas");
         });
     });
 
 document.onkeyup = function(event){
     var keyVal = event.key;
     
-    if(keyVal != "ArrowRight" && keyVal != "ArrowLeft"){
-        console.log("change with arrow keys")
-    }
-    else if(keyVal==="ArrowRight" && INDEX <= 10){    
+    
+    if(keyVal==="ArrowRight" && INDEX <= 10){    
         ++INDEX;
         remaining = 30;
         nextQuestion();
+    }
+    else{
+            console.log("skip with arrow keys")
+        
     }
 }
 function run() {
@@ -101,8 +99,8 @@ function run() {
 
 $("#startGame").on("click",function(){
     setUpQuestion();
-
     run();
+    // clear out instructions & remove start button
     $("#instructions").empty();
     $(this).remove();
     setUpQuestion();
