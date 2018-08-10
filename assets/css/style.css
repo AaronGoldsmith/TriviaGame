@@ -13,8 +13,22 @@ body{
 .jumbotron{
     height: auto;
     padding: 10px;
-    /* overflow:scroll; may need to remove */
-
+}
+p{
+    font-size: 1.1em;
+    padding: 10px;
+    text-align: center;
+    line-height: 0.1em;
+}
+#startGame{
+    cursor: pointer;
+    color: #aabbccaa;
+    text-align: center;
+    font-size: 3em;
+    margin: 0px auto;
+}
+#startGame:hover{
+    color: #13d6ac;
 }
 h2{
     margin: 20px;
